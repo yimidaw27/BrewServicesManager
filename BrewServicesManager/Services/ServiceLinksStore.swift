@@ -20,8 +20,7 @@ final class ServiceLinksStore {
 
     init() {
         // Use same pattern as ServicesDiskCache
-        let applicationSupport = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first
-        let base = applicationSupport ?? URL(fileURLWithPath: NSTemporaryDirectory())
+        let base = URL.applicationSupportDirectory
         let hostIdentifier = (Bundle.main.bundleIdentifier ?? ProcessInfo.processInfo.processName)
             .replacing("/", with: "_")
 

@@ -22,11 +22,6 @@ enum AppKitBridge {
         NSWorkspace.shared.activateFileViewerSelecting([url])
     }
 
-    /// Opens a URL in the default browser.
-    static func openURL(_ url: URL) {
-        NSWorkspace.shared.open(url)
-    }
-
     /// Terminates the application.
     static func quit() {
         NSApplication.shared.terminate(nil)

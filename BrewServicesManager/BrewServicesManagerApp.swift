@@ -11,20 +11,6 @@ struct BrewServicesManagerApp: App {
     @State private var appSettings = AppSettings()
     @State private var serviceLinksStore = ServiceLinksStore()
 
-    var body: some Scene {
-        MenuBarExtra {
-            MenuBarRootView()
-                .environment(servicesStore)
-                .environment(appSettings)
-                .environment(serviceLinksStore)
-        } label: {
-            Label("Brew Services Manager", systemImage: iconName)
-                .labelStyle(.iconOnly)
-        }
-        .menuBarExtraStyle(.window)
-        .windowResizability(.contentSize)
-    }
-    
     private var iconName: String {
         if !servicesStore.isBrewAvailable {
             return "mug.fill"  // Error state
@@ -50,5 +36,19 @@ struct BrewServicesManagerApp: App {
         }
         
         return "mug.fill"  // Normal state
+    }
+
+    var body: some Scene {
+        MenuBarExtra {
+            MenuBarRootView()
+                .environment(servicesStore)
+                .environment(appSettings)
+                .environment(serviceLinksStore)
+        } label: {
+            Label("Brew Services Manager", systemImage: iconName)
+                .labelStyle(.iconOnly)
+        }
+        .menuBarExtraStyle(.window)
+        .windowResizability(.contentSize)
     }
 }
