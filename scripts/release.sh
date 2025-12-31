@@ -372,7 +372,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     [ -f "$CHANGELOG_FILE" ] && git add "$CHANGELOG_FILE"
 
     # Commit
-    git commit -m "Release $VERSION"
+    git commit -m "chore: release $VERSION"
 
     # Create tag
     create_git_tag "$VERSION"
