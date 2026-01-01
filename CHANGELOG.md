@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- App version and build number display in Settings
 - Homebrew installation option in the README
 - Homebrew cask update and PR helpers in the release script
 
