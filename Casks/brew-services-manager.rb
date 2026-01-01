@@ -1,6 +1,6 @@
 cask "brew-services-manager" do
-  version "1.1.0"
-  sha256 "1281126a76a38dfbc4c2fbb42e7d4df4cf11817acf09495b0e774e5c06108957"
+  version "1.1.1"
+  sha256 "4ca45fe9e6779e093cd32f0ffaeab21c27d1a677537095aa81fe4bb79b31ba61"
 
   url "https://github.com/validatedev/BrewServicesManager/releases/download/v#{version}/BrewServicesManager-#{version}.dmg"
   name "Brew Services Manager"
