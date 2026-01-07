@@ -55,9 +55,7 @@ final class AppSettings {
     var launchAtLogin: Bool {
         didSet {
             defaults.set(launchAtLogin, forKey: Keys.launchAtLogin)
-            Task { @MainActor in
-                await applyLaunchAtLoginSetting()
-            }
+            applyLaunchAtLoginSetting()
         }
     }
 
@@ -137,7 +135,7 @@ final class AppSettings {
     }
 
     /// Applies the current launchAtLogin setting to the system.
-    private func applyLaunchAtLoginSetting() async {
+    private func applyLaunchAtLoginSetting() {
         // Clear any previous error
         launchAtLoginError = nil
 
@@ -146,10 +144,10 @@ final class AppSettings {
         do {
             if launchAtLogin {
                 // Register the app to launch at login
-                try await service.register()
+                try service.register()
             } else {
                 // Unregister from launch at login
-                try await service.unregister()
+                try service.unregister()
             }
         } catch {
             // Handle the error
