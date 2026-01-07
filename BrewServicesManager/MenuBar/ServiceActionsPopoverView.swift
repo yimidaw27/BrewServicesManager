@@ -5,7 +5,6 @@ import SwiftUI
 struct ServiceActionsPopoverView: View {
     @Environment(ServicesStore.self) private var store
     @Environment(ServiceLinksStore.self) private var linksStore
-    @Environment(\.openURL) private var openURL
 
     let service: BrewServiceListEntry
 
@@ -171,7 +170,7 @@ struct ServiceActionsPopoverView: View {
                             icon: "link.circle",
                             color: .blue
                         ) {
-                            openURL(link.url)
+                            AppKitBridge.openURL(link.url)
                         }
                     }
 

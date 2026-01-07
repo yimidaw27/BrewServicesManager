@@ -7,7 +7,6 @@ import AppKit
 
 /// Provides isolated AppKit functionality for SwiftUI views.
 /// This centralizes AppKit usage to minimize framework mixing.
-@MainActor
 enum AppKitBridge {
 
     /// Copies a string to the system clipboard.
@@ -20,6 +19,11 @@ enum AppKitBridge {
     /// Reveals a file in Finder.
     static func revealInFinder(_ url: URL) {
         NSWorkspace.shared.activateFileViewerSelecting([url])
+    }
+
+    /// Opens a URL in the default browser.
+    static func openURL(_ url: URL) {
+        NSWorkspace.shared.open(url)
     }
 
     /// Terminates the application.
