@@ -5,6 +5,7 @@ import SwiftUI
 struct ServiceActionsPopoverView: View {
     @Environment(ServicesStore.self) private var store
     @Environment(ServiceLinksStore.self) private var linksStore
+    @Environment(AppSettings.self) private var settings
 
     let service: BrewServiceListEntry
 
@@ -14,6 +15,7 @@ struct ServiceActionsPopoverView: View {
     let onManageLinks: () -> Void
 
     @Binding var isPresented: Bool
+    @State private var isDetectingPorts = false
 
     private var operation: ServiceOperation? {
         store.serviceOperations[service.id]
@@ -112,15 +114,23 @@ struct ServiceActionsPopoverView: View {
                     }
                 }
 
-                // Port summary
-                if let ports = servicePortsForDisplay, !ports.isEmpty {
+                // Port summary - reserve space for running services to prevent layout shift
+                if service.status == .started {
                     HStack(spacing: LayoutConstants.tightSpacing) {
                         Image(systemName: "network")
                             .foregroundStyle(.secondary)
                             .frame(width: LayoutConstants.menuRowIconWidth)
 
-                        Text(portsDescription(ports))
-                            .foregroundStyle(.secondary)
+                        if let ports = servicePortsForDisplay, !ports.isEmpty {
+                            Text(portsDescription(ports))
+                                .foregroundStyle(.secondary)
+                        } else if isDetectingPorts {
+                            Text("Detecting…")
+                                .foregroundStyle(.tertiary)
+                        } else {
+                            Text("No ports detected")
+                                .foregroundStyle(.tertiary)
+                        }
                     }
                     .font(.caption2)
                 }
@@ -201,6 +211,24 @@ struct ServiceActionsPopoverView: View {
                 }
             }
             .padding(.vertical, LayoutConstants.compactPadding)
+        }
+        .task {
+            // Skip if not a running service or ports already loaded
+            guard service.status == .started else { return }
+            if let info = store.selectedServiceInfo,
+               info.name == service.name,
+               info.detectedPorts != nil {
+                return
+            }
+
+            isDetectingPorts = true
+            await store.fetchServiceInfoWithPorts(
+                service.name,
+                domain: settings.selectedDomain,
+                sudoServiceUser: settings.validatedSudoServiceUser,
+                debugMode: settings.debugMode
+            )
+            isDetectingPorts = false
         }
     }
 

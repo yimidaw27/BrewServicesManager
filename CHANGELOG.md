@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Scrollable services list with automatic scrollbar when many services are installed
 
+### Fixed
+
+- Port detection in service popover now shows "Detecting…" immediately instead of blank space, preventing layout shift
+
 ## [1.1.6] - 2026-01-08
 
 ### Changed

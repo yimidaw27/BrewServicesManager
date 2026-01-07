@@ -43,7 +43,6 @@ enum LayoutConstants {
     static let sectionLabelTopPadding: CGFloat = 12
     static let sectionLabelBottomPadding: CGFloat = 4
     static let disclosureIndicatorSize: CGFloat = 10
-    static let hoverScaleEffect: CGFloat = 0.98
 
     // Services list
     static let maxVisibleServices = 10

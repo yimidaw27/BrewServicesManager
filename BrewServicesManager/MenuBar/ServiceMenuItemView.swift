@@ -97,18 +97,6 @@ struct ServiceMenuItemView: View {
                     onManageLinks: onManageLinks,
                     isPresented: $showingPopover
                 )
-                .task {
-                    // Fetch ports when popover appears if not already fetched for this service
-                    if store.selectedServiceInfo?.name != service.name ||
-                       store.selectedServiceInfo?.detectedPorts == nil {
-                        await store.fetchServiceInfoWithPorts(
-                            service.name,
-                            domain: settings.selectedDomain,
-                            sudoServiceUser: settings.validatedSudoServiceUser,
-                            debugMode: settings.debugMode
-                        )
-                    }
-                }
             }
         }
     }

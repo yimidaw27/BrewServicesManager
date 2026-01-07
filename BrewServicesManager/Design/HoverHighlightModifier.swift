@@ -14,7 +14,6 @@ struct HoverHighlightModifier: ViewModifier {
         content
             .background(isEnabled && isHovered ? Color.primary.opacity(0.08) : Color.clear)
             .clipShape(.rect(cornerRadius: LayoutConstants.hoverCornerRadius))
-            .scaleEffect(isEnabled && isHovered ? 1.0 : LayoutConstants.hoverScaleEffect)
             .onHover {
                 if isEnabled {
                     isHovered = $0
